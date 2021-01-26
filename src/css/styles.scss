@@ -1,0 +1,511 @@
+@import "fonts.css";
+@import "~normalize.css";
+@import "default-styles.css";
+
+@mixin header-mobile-img($path){
+  background-image: url($path);
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 48px;
+}
+
+body {
+  font-family: PTSans;
+  font-size: 16px;
+  color: #4A4A4A;
+}
+
+.container {
+  height: 100%;
+  margin: 0 360px;
+}
+
+header {
+  height: 152px;
+  width: 100%;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.04);
+
+  .mobile-header {
+    display: none;
+  }
+
+  .top-header {
+    height: 50%;
+    display: grid;
+    grid-template-columns: minmax(250px, 540px) minmax(240px, 300px) minmax(230px, 800px);
+    padding-top: 25px;
+
+    .geo {
+      display: grid;
+      grid-template-columns: minmax(220px, 270px) minmax(180px, 440-270px);
+      background-color: white;
+
+      .logo {
+        height: 24px;
+        background-image: url("../assets/img/logo.png");
+        background-repeat: no-repeat;
+        cursor: pointer;
+      }
+
+      .city-select {
+        margin-top: 4px;
+
+        .city-select-name {
+          text-decoration-style: dotted;
+          text-decoration-line: underline;
+          text-decoration-color: #4a4a4a;
+          text-underline-offset: 1.4px;
+          text-decoration-thickness: from-font;
+          float: left;
+        }
+
+        .city-select-tick {
+          height: 15px;
+          margin-top: 2px;
+          background-image: url("../assets/img/tick.png");
+          background-repeat: no-repeat;
+          background-position: 100px;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .nav {
+      display: inline-block;
+      text-align: center;
+      margin-top: 4px;
+
+      .addresses {
+        float: left;
+        margin-right: 16px;
+      }
+
+      .delivery {
+        float: left;
+        margin-right: 16px;
+      }
+
+      .about-us {
+        float: left;
+        margin-right: 16px;
+      }
+    }
+
+    .more {
+      display: grid;
+      margin-left: 50px;
+      grid-template-columns: minmax(195px, 1fr) minmax(145px, 1fr);
+
+      .for-poor-vision {
+        border-radius: 10px;
+        padding-left: 16px;
+        background-color: #f4f4f4;
+        display: inline-block;
+        height: 32px;
+        position: relative;
+        top: -2px;
+
+        .for-poor-vision-text {
+          font-size: 13px;
+          padding-top: 8px;
+        }
+
+        .for-poor-vision-icon {
+          width: 20px;
+          height: 15px;
+          background-image: url("../assets/img/eye.png");
+          background-position: center;
+          background-repeat: no-repeat;
+          float: right;
+          margin-top: -13px;
+          margin-right: 7px;
+        }
+      }
+
+      .header-phone {
+        text-align: right;
+        padding-top: 4px;
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+.bottom-header {
+  display: grid;
+  grid-template-columns: minmax(208px, 208px) minmax(100px, 1fr) minmax(230px, 300px);
+
+  .catalog {
+    height: 40px;
+    border-radius: 10px;
+    background-color: #00893D;
+    color: white;
+    font-size: 20px;
+    margin-top: 4px;
+
+    .catalog-logo {
+      width: 17px;
+      height: 15px;
+      margin: 13px 14px 0 17px;
+      background-image: url("../assets/img/gred.png");
+      background-repeat: no-repeat;
+      float: left;
+    }
+
+    .catalog-text {
+      padding-top: 10px;
+    }
+  }
+
+  .search {
+    height: 48px;
+    border: 2px solid #FFCC00;
+    border-radius: 100px;
+    margin-left: 40px;
+
+    .input-area {
+      margin: 12px 0 0 20px;
+      width: 80%;
+    }
+
+    .search-logo {
+      height: 40px;
+      width: 40px;
+      float: right;
+      border-radius: 50%;
+      background-image: url("../assets/img/search.png");
+      background-color: #FFCC00;
+      margin: 2px 2px;
+      background-position: center;
+      background-repeat: no-repeat;
+      cursor: pointer;
+    }
+  }
+
+  .personal {
+    display: grid;
+    grid-template-columns: minmax(100px, 1fr) minmax(30px, 50px) minmax(30px, 50px);
+
+    .personal-block {
+      margin-left: 28px;
+      padding-top: 10px;
+
+      .personal-logo {
+        width: 29px;
+        height: 28px;
+        margin-right: 9px;
+        background-image: url("../assets/img/man.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        float: left;
+      }
+
+      .personal-block-profile {
+        font-size: 13px;
+        color: #8F8F8F;
+      }
+
+      .personal-block-name {
+        color: #4A4A4A;
+      }
+    }
+
+    .favorites {
+      height: 24px;
+      padding-top: 46px;
+      background-image: url("../assets/img/star.png");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .cart {
+      height: 30px;
+      padding-top: 46px;
+      background-image: url("../assets/img/cart.png");
+      background-repeat: no-repeat;
+      background-position: right;
+    }
+  }
+}
+
+.main-block {
+  .breadcrumbs {
+    font-size: 14px;
+    margin-top: 23px;
+
+    .breadcrumbs-city:hover {
+      cursor: pointer;
+      text-decoration: underline;
+      text-decoration-color: #FFCC00;
+      text-underline-offset: 2px;
+      text-decoration-thickness: 2px;
+    }
+  }
+
+  .pharmacy-header {
+    font-size: 30px;
+    margin-top: 35px;
+    font-weight: 700;
+  }
+
+  .pharmacy {
+    margin-top: 32px;
+    display: grid;
+    grid-template-columns: 382px 1fr;
+    grid-column-gap: 29px;
+
+    .pharmacy-list {
+      overflow: scroll;
+      overflow-x: hidden;
+      scrollbar-color: #F4F4F4 #DADADA;
+      scrollbar-width: thin;
+      float: left;
+      height: 500px;
+
+      .pharmacy-item {
+        width: 344px;
+        height: 88px;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        box-shadow: 0px 0px 16px rgba(143, 143, 143, 0.2);
+        display: grid;
+        grid-template-columns: 5fr 3fr;
+
+        .pharmacy-item-header {
+          line-height: 20.7px;
+        }
+      }
+
+      .pharmacy-item-address {
+        margin-top: 11px;
+        font-size: 14px;
+      }
+
+      .pharmacy-item-info {
+        margin: 9px 0 0 16px;
+
+        .first {
+          margin-top: 31px;
+        }
+      }
+
+      .pharmacy-item-business-hours {
+        margin: 9px 16px 0 0;
+        font-size: 14px;
+        text-align: right;
+
+        .heart-logo {
+          width: 15px;
+          height: 14px;
+          margin-top: 2px;
+          background-image: url("../assets/img/heart.png");
+          background-repeat: no-repeat;
+          background-position: center;
+          float: right;
+          cursor: pointer;
+        }
+
+        .heart-logo1 {
+          width: 15px;
+          height: 14px;
+          margin-top: 2px;
+          background-image: url("../assets/img/heart1.png");
+          background-repeat: no-repeat;
+          background-position: center;
+          float: right;
+          cursor: pointer;
+        }
+
+        .days-to-work {
+          margin-top: 30px;
+        }
+
+        .hours {
+          margin-top: 8px;
+        }
+      }
+    }
+
+    .pharmacy-map {
+      height: 500px;
+      background-image: url("../assets/img/mapmarker.png"), url("../assets/img/bg.png");
+      background-size: auto, cover;
+      background-position: center, center;
+      float: left;
+      background-repeat: no-repeat, no-repeat;
+    }
+  }
+}
+
+.make-fav {
+  visibility: hidden;
+  display: inline-block;
+  width: 176px;
+  height: 48px;
+  margin: -20px 0 0 30px;
+  box-shadow: 0px 0px 16px rgba(143, 143, 143, 0.2);
+  border-radius: 10px;
+  font-size: 14px;
+  text-align: center;
+  padding-top: 16px;
+  position: absolute;
+  background-color: white;
+  z-index: 1;
+
+}
+
+#pharm1:hover {
+  #pharm1-help {
+    visibility: visible;
+  }
+}
+
+#pharm2:hover {
+  #pharm2-help {
+    visibility: visible;
+  }
+}
+
+#pharm3:hover {
+  #pharm3-help {
+    visibility: visible;
+  }
+}
+
+#pharm4:hover {
+  #pharm4-help {
+    visibility: visible;
+  }
+}
+
+#pharm5:hover {
+  #pharm5-help {
+    visibility: visible;
+  }
+}
+
+.active {
+  font-weight: 700;
+}
+
+@media screen and (max-width: 1730px) {
+  .container {
+    margin: 0 120px;
+  }
+  .top-header {
+    .more {
+      margin-left: 40px;
+    }
+  }
+}
+
+@media screen and (max-width: 1320px) {
+  .container {
+    margin: 0 80px;
+  }
+  .top-header {
+    .more {
+      margin-left: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 1160px) {
+  .container {
+    margin: 0 40px;
+  }
+  header {
+    .top-header {
+      grid-template-columns: minmax(250px, 1fr) minmax(230px, 1fr);
+
+      .nav {
+        display: none;
+      }
+
+      .more {
+        margin-left: 0px;
+      }
+    }
+
+    .bottom-header .search .input-area {
+      margin: 12px 0 0 20px;
+      width: 60%;
+    }
+  }
+  .main-block .pharmacy .pharmacy-map {
+    background-size: 60%, cover;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    margin: 0 23px;
+  }
+  header .top-header {
+    display: none;
+  }
+  header .bottom-header {
+    display: none;
+  }
+  .main-block .pharmacy {
+    display: block;
+  }
+  .main-block .pharmacy .pharmacy-map {
+    width: 100%;
+    float: none;
+    height: 300px;
+    background-image: url("../assets/img/bg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .main-block .pharmacy .pharmacy-list {
+    margin-top: 330px;
+    overflow: inherit;
+  }
+  .main-block .pharmacy .pharmacy-list .pharmacy-item {
+    width: 100%;
+    height: 100px;
+  }
+  header {
+    height: 48px;
+
+    .mobile-header {
+      display: grid;
+      grid-template-columns: minmax(25px, 35px) minmax(25px, 35px) minmax(200px, 1fr) minmax(25px, 35px);
+      height: 48px;
+
+      .hamburger {
+        @include header-mobile-img("../assets/img/hamb.png");
+      }
+
+      .search-mob {
+        @include header-mobile-img("../assets/img/search.png");
+      }
+
+      .logo-mob {
+        @include header-mobile-img("../assets/img/logo-mob.png");
+
+      }
+
+      .cart-mob {
+        @include header-mobile-img("../assets/img/cart.png");
+        margin-top: -6px;
+      }
+    }
+  }
+
+  .main-block .pharmacy-header {
+    font-size: 18px;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: #DADADA;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #F4F4F4;
+  border-radius: 9em;
+}
